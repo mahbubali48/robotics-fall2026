@@ -1,0 +1,113 @@
+# Week 1: Discovering a Robot Through ROS 2
+
+## Student
+
+- Name: Mahbub Ali
+- Email: mahbub.ali86@login.cuny.edu
+
+## final.architecture_evidence
+
+My node is reactive because it uses the current LIDAR readings to decide whether to move or stop, without planning ahead or remembering previous information. An accurate hybrid system would need to add a planning layer that creates a route or long term goal while the reactive layer handles immediate obstacles and safety.
+
+
+## final.course_reflection
+
+This activity strengthened my own interests in robotics, computing, and engineering. Since the lab was extremely hands on, the interactive nature encouraged my thinking and interest to take initiative in this lab and explore the many scenarios and test cases for the robot. I would confidently say that this activity positively affected my motivation to do similar kinds of work in the future, and helped me look more positively towards what is in store for this class. The value that I see in connecting technical or computing work with human, ethical, or societal considerations is a positive value where the intersectionality of these concepts can provide useful tools for the betterment of society.  What stood out to me the most in this activity was how interactive and immersive the software and lab was. Being able to tinker with different variables and seeing the results in real time creates a funner and engaging lab. Also the simulations of the software with the computer graphics really nailed the idea of actually working on robotics, even if it is entirely software based. One thing I would like to share about my experience with this activity is that the lab did feel quite long especially with how often there were written responses. The experience was somewhat dampened negatively because of it, but overall it was great.
+
+## final.hardware_next
+
+Before using the behavior on hardware, I would test it with different obstacle distances, invalid LIDAR readings, and sensor failures to make sure the robot stops correctly. I would also test the 0.5 second timeout and final zero command to confirm the robot does not continue moving unexpectedly.
+
+
+## final.middleware_debugging
+
+The ROS graph would help me trace the command from `/student_cmd_vel` through the command guard to `/cmd_vel` and the simulator bridge. I could inspect the publishers and subscribers at each connection to find where the command is missing or being blocked.
+
+
+## final.system_synthesis
+
+Robotics software is difficult because many different components need to work together correctly and at the right time. Throughout this lab, I learned that even getting the environment running requires understanding how Git, Docker, ROS 2, and the simulator connect. I ran into issues installing Git’s command line tools, finding the correct folder inside Docker, and copying code into the browser Ubuntu terminal. I also tried running /ros_gz_bridge as a command before realizing it was a node name. These issues showed me that robotics involves a deep understanding of programming the robot and understanding the environment and how the different tools communicate.
+
+For Mission 3, I implemented a reactive sense-decide-act architecture. My front_distance() function takes the LIDAR readings and finds the nearest valid distance ahead of the robot. My decide_velocity() function then uses that distance to decide whether the robot should move forward or stop. This architecture is simple and responds quickly to sensor readings, which makes it useful for obstacle avoidance. However, it does not plan a route or remember previous information, so the robot may stop at an obstacle instead of finding another way around it.
+
+ROS 2 middleware connected the components through topics using publishers and subscribers. In Mission 1, I confirmed that /ros_gz_bridge publishes LIDAR data on /scan, which the evidence collector subscribes to. The link also provides /scan to my supplied /obstacle_guard node, which uses my decision functions to determine movement. The node publishes a suggested command on /student_cmd_vel, and /course_cmd_vel_guard subscribes to that topic. The guard then publishes the approved command on /cmd_vel, which the simulator bridge receives to move the robot. These relationships demonsrated to me how ROS 2 allows separate programs to communicate without needing to be one large program.
+
+Timing and invalid data are important for safety because the robot should not assume that missing information means the path is clear. My function returns "none" when there are no valid front measurements, and the decision function returns 0.0 to stop the robot. The supplied watchdog also stops the robot if scans stop arriving, while the command guard can stop motion when commands become stale. In Mission 2, I learned that a final zero command and the 0.5 second timeout help prevent the robot from continuing to move unexpectedly.
+
+The command guard is the layer that can restrict unsafe motion before commands reach the simulator. My decision function also limits forward speed to 0.18 m/s, but the guard provides an additional safety layer. Overall, the lab helped me understand how sensor data, decision-making code, middleware, and safety controls work together to control a robot.
+
+## final.timing_evidence
+
+The 0.5 second timeout and final zero command most affected my understanding of robot safety because they showed me how the robot prevents unexpected movement. The final zero command stops the robot when a trial ends, while the timeout stops it if commands become stale, even if the last command was to move forward.
+
+
+## mission_1.command_path_explanation
+
+A proposed command travels on /student_cmd_vel. This guard checks whether the command is safe, then sends the approved command on /cmd_vel so the robot can move.
+
+## mission_1.graph_explanation
+
+A ROS 2 graph shows the programs running in the robot system and how they communicate with each other. For example, the /ros_gz_bridge node publishes sensor data on the /scan topic.
+
+## mission_1.guided_checks
+
+{'bridge_info': True, 'command_topics': True, 'guard_info': True, 'node_list': True, 'scan_info': True, 'scan_message': True}
+
+## mission_1.scan_observation
+
+I found the range min and range max, which represents the minimum and maximum distances recorded around the robot.
+
+## mission_1.tools_explanation
+
+Gazebo is responsible for simulating the robot, its movement, sensors, and environment, while RViz is responsible for displaying ROS 2 data so you can see what the robot is sensing and doing.
+
+## mission_2.measurement_explanation
+
+For the first curved trial, the estimated traveled path and start-to-end distance describe different measurements because the turning speed creates a curved path where the robot travels a longer distance than the straight-line distance between its starting and ending positions. Instead of decreasing its traveled path, turning changes the robot’s direction, so it can travel a longer route while ending up closer to where it started.
+
+## mission_2.modified_settings
+
+{'linear_x': 0.22, 'angular_z': -0.8, 'duration': 4.0}
+
+## mission_2.motion_comparison
+
+For the straight motion trial, the measured motion was captured correctly with my prediction. Since the turning speed is 0 and the forward speed is 0.15m/s, the robot will only move forward. 
+
+## mission_2.prediction_locks
+
+{'curve': '2026-09-06T22:26:51.524201+00:00', 'curve_modified': '2026-09-06T22:28:55.992119+00:00', 'rotation': '2026-09-06T22:18:29.793857+00:00', 'straight': '2026-09-06T22:15:06.068141+00:00'}
+
+## mission_2.predictions
+
+{'curve': 'I predict it will go into a forward right motion because the forward speed is 0.15m/s and the turning speed is -0.40 rad/s.', 'curve_modified': 'This path will differ from the first curved trial because the curve will be tighter with the faster speed and faster turning speed.', 'rotation': 'I predict its position will be rotated counter clockwise, while its direction will  aim towards the left.', 'straight': "I predict the robot will finish ahead of it's starting point in a straight path."}
+
+## mission_2.safety_explanation
+
+The command guard checks if the proposed speeds the robot received are possible and can be executed. The final zero command makes sure the robot does not proceed any further with unwanted motion by having a final command that ensures 0 movement. The timeout is needed if the program crashes or communication stops while the robot is moving, ensuring the robot stops after 0.5 seconds if no new command is recieved. 
+
+## mission_3.data_to_command
+
+The first function finds the nearest valid LiDAR distance ahead of the robot. The second function uses that distance to decide whether the robot should move forward or stop.
+
+
+## mission_3.missing_data_safety
+
+The robot stops because without a valid front measurement, it cannot tell if there is an obstacle ahead. Treating the path as clear could cause the robot to crash.
+
+
+## mission_3.system_layers
+
+My decision functions determine the speed based on the LiDAR readings. The supplied ROS node sends that proposed speed to "/student_cmd_vel", and the command guard checks it before sending the approved command to "/cmd_vel".
+
+
+## part_1.activity
+
+{'sensor': {'normal': True, 'changed': True}, 'timing': {'normal': True, 'changed': True}, 'hardware': {'normal': True, 'changed': True}}
+
+## part_2.activity
+
+{'reactive': {'normal': True, 'changed': True}, 'behavior': {'normal': True, 'changed': True}, 'deliberative': {'normal': True, 'changed': True}, 'hybrid': {'normal': True, 'changed': True}, 'safety': {'normal': True, 'changed': True}}
+
+## part_3.activity
+
+{'middleware': {'single': True, 'multiple': True}, 'communication': {'topic': True, 'service': True}, 'failure': {'healthy': True, 'sensor': True, 'type': True, 'visualization': True}, 'inspection': {'nodes': True, 'node_info': True, 'topics': True, 'topic_info': True, 'echo': True, 'services': True, 'broken': True}}
