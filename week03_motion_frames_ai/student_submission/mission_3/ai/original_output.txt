@@ -1,0 +1,31 @@
+Assumptions: the existing `Segment` class is already defined in `pattern.py`, positive `angular_z` turns left, negative `angular_z` turns right, and the course wrapper handles repeated publishing and the final zero-velocity stop. With `linear_x = 0.18 m/s` and `|angular_z| = 0.60 rad/s`, the arc radius is:
+
+$$
+R=\frac{v}{|\omega|}=\frac{0.18}{0.60}=0.30\text{ m}
+$$
+
+A 45° turn is \(\pi/4\) radians, so each arc should last:
+
+$$
+t=\frac{\pi/4}{0.60}\approx1.309\text{ s}
+$$
+
+```python
+import math
+
+
+def build_pattern(pattern_name: str) -> list[Segment]:
+    if pattern_name != "alternating_arcs":
+        raise ValueError(f"Unknown pattern: {pattern_name}")
+
+    duration = (math.pi / 4.0) / 0.60
+
+    return [
+        Segment(linear_x=0.18, angular_z=0.60, duration=duration),
+        Segment(linear_x=0.18, angular_z=-0.60, duration=duration),
+        Segment(linear_x=0.18, angular_z=0.60, duration=duration),
+        Segment(linear_x=0.18, angular_z=-0.60, duration=duration),
+    ]
+```
+
+Tests should verify that there are exactly four segments, the angular directions alternate `+ - + -`, each arc has a radius of approximately `0.30 m`, each segment turns approximately `π/4` radians in magnitude, all speed and duration limits are respected, the total heading change is approximately zero, and an unknown pattern name raises `ValueError`.

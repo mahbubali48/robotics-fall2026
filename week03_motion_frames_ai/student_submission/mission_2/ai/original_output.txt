@@ -1,0 +1,10 @@
+You can use ROS 2’s `tf2` system to transform a `PointStamped` from the hallway camera frame into the robot’s `base_link` frame. The TF buffer stores the relationship between coordinate frames and can transform the point into the requested target frame.
+
+```python
+from geometry_msgs.msg import PointStamped
+
+def transform_camera_point(tf_buffer, point: PointStamped):
+    return tf_buffer.transform(point, "base_link")
+```
+
+This assumes that the TF tree already contains a valid transform between the hallway camera and `base_link`, and that the incoming point has the correct camera frame set in its `header.frame_id`.
