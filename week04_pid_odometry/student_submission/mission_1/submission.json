@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-09-27T18:58:17",
+  "mission_id": "mission_1",
+  "student": {
+    "name": "Mahbub Ali",
+    "student_id": "mahbub.ali86@login.cuny.edu",
+    "section": "CSCI 39536"
+  },
+  "explanations": {
+    "prediction": "With too little Kp, I expect the arm to move slowly and struggle to reach or hold the target. With too little Kd, I expect the arm to overshoot the target and oscillate before settling.",
+    "tuning_analysis": "I predicted that low Kp would make the arm weak or slow and low Kd would cause overshoot. I increased Kp and Kd on the shoulder and elbow to improve the response. The hold phase showed less error and less oscillation. Gravity compensation helped the arm resist gravity and hold the target more accurately."
+  },
+  "params": {
+    "activity": "two_link_arm_pid_tuning",
+    "kp1": 13.4,
+    "ki1": 1.1,
+    "kd1": 1.45,
+    "kp2": 9.1,
+    "ki2": 0.9,
+    "kd2": 2.75,
+    "gravityCompensation": false
+  },
+  "metrics": {
+    "completed": true,
+    "posesHeld": 3,
+    "posesRequired": 3
+  },
+  "checkin": {
+    "note": "I predicted that low Kp would make the arm weak or slow and low Kd would cause overshoot. I increased Kp and Kd on the shoulder and elbow to improve the response. The hold phase showed less error and less oscillation. Gravity compensation helped the arm resist gravity and hold the target more accurately.",
+    "choice": "",
+    "complete": true
+  },
+  "csv_files": {},
+  "activity_gifs": [
+    "latest_arm_tuning.gif"
+  ]
+}
