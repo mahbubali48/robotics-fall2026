@@ -1,0 +1,34 @@
+{
+  "files": {
+    "autosave/responses.json": "96058e74c356da4f05f540fe9453f11a7749ea45096ea0fb64cc0c84eb78e2c9",
+    "autosave/responses.md": "7135bfb4d3630e901da05af1151d427f1b3c2dbe87bd30d10b6b268bee835375",
+    "final_reflection.md": "9b65b43ed29a6e8ea33bb3239742da8a193d5df1f5139fcda170a762d24108ec",
+    "final_synthesis.md": "67ba43c07891316d628485be929cc1bdf3618c080706d2142d074ef83ae2296c",
+    "mission_1/evidence.png": "742c4d8d05d5e7834f881d916089e4be2840ceb5618e9a1f99166a71e6eb7feb",
+    "mission_1/explanation.md": "19338dfee365d8367b9c7148933f55df059f6b3cbc4d6af2e188130e974a691d",
+    "mission_1/measurements.csv": "5b6971d46e1b6685b380d4fac7a8f178bb8fb327b77fc12b46d857c147a77787",
+    "mission_1/submission.json": "294a8d508b351c694e319bc5b4433d755b4ddbc8706143f37a81c8d4867e3a3f",
+    "mission_2/evidence.png": "d155aaf71f73e920f91216fa06ee7f9eca09fdb765c4c3f328a915aa482e4321",
+    "mission_2/explanation.md": "50fe85b3c13f2db3f85d5e4d7ff717e8a87afde57a4e3cc4a980ae9adec3ce0c",
+    "mission_2/measurements.csv": "fa36aa9a818c2cb3955c17f1c2e5314abf81d673e17fae4c7ff59313b9ea0170",
+    "mission_2/submission.json": "1fba66b3f9032037c9e3d7bd15993445c4f4914b228a3ec5631a2a5b1fa4ff43",
+    "mission_3/explanation.md": "08c88ce07dca13e221fe1c3ea38f2a2fa1cc905fe576fc14722d9b580dfcee29",
+    "mission_3/measurements.csv": "f1f3fd74523443d624a3c374a20df0e7f6206aa7eefa0ce26de05f5022ec0c2a",
+    "mission_3/submission.json": "00c0f663954dadbb5a45c3ba0af1182161a0fc2a37e015a0f6bd2be8aece411c",
+    "student.json": "713d94ff97810a1cf62bcc87c9edc98335e93298344b74fd56dd0569ccc95a31"
+  },
+  "generated_at": "2026-10-04T20:02:59.041605+00:00",
+  "lab_id": "week05_sensors_uncertainty",
+  "mission_signatures": {
+    "mission_1": "4af0934863e4ee8b",
+    "mission_2": "88fce7797b8b3049",
+    "mission_3": "78a429e8fb2c81c3"
+  },
+  "response_signature": "4d55844cce4a33c6",
+  "schema_version": 2,
+  "student": {
+    "course_id": "CSCI 39536",
+    "email": "mahbub.ali86@login.cuny.edu",
+    "name": "Mahbub Ali"
+  }
+}
