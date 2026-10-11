@@ -1,0 +1,35 @@
+{
+  "files": {
+    "autosave/responses.json": "d6aec4b7527cfc2e8d2c62b6a59cd6e331a4acf5969a2265f610d2fcf4bf659a",
+    "autosave/responses.md": "907b9a179061fc75521baeb8dad793acaaa99d6494e3bce3a2a988f5a6732871",
+    "final_reflection.md": "f92c774f68418af7ff8443e6f9d3cc9f1b2c42ff628255017b23b9408641c38b",
+    "final_synthesis.md": "b867e86bad009b9bb4b7daa2b427f43c8e083a6500d2685ef10879153d676565",
+    "mission_1/analysis.json": "e415caa6cdc8abda163cd8a243684d1613a166415dedd715a889fad1c6f7b38d",
+    "mission_1/evidence.json": "e7eb773c1197a570f363c4d9a4041a9e1beefe139be5473219289609c4237303",
+    "mission_1/explanation.md": "088f0578b37c8f72084386db2075e349ad9991ceb123f8f953f6d9a31798d432",
+    "mission_1/map.pgm": "af5e45dacdb15d2b3c046f0ddb47e3a4535f31addba3aca6663e965ff746d0e4",
+    "mission_1/map.yaml": "894b27a0835d6af093b0a549e025639b560ed33eb1d13edb41c903576855ec2f",
+    "mission_1/rviz_screenshot.png": "5dcc8936151278c94ef683cc1d67748262531ffca34582aeb3a022321d5c1773",
+    "mission_1/submission.json": "41a9633622c39653045c4381dc47269ceb8733dcd36df318a28d1b43f23563c0",
+    "mission_2/analysis.json": "bcd6dbc1ec7e89101bee0d0e2e5ce07a52975c958d3476fc4d887229b976c240",
+    "mission_2/evidence.json": "1864843997cdfb079e6828013345228d03e157e880eb8cd31d5e2caa86f61dd4",
+    "mission_2/explanation.md": "6e09356a95630f66ec2776bc44c71438cb0604e98ce623b1d0623e08024d8236",
+    "mission_2/map.pgm": "2588aaefc241dafca1e711d68b1fd8c75be5625b54d52fd15a5330ded05f5479",
+    "mission_2/map.yaml": "3375ae998825792eda93ad7c5529117ecdd68fbf4ab3bf7b66acdd69192fbe44",
+    "mission_2/rviz_screenshot.png": "825b8439d8e5f82cd890dce7d67bb5214439bbd420791b6fc2449883a9713a7d",
+    "mission_2/submission.json": "8ff3be65fb851dfa6683e6356af1713d0e5a6f67b2522819a2d7c0fd0ba0ae48",
+    "student.json": "a3aca557c068a4e461d290ccd8630860a9bdbe266cce3ed3a33a110395fc6b90"
+  },
+  "generated_at": "2026-10-11T20:56:28.221949+00:00",
+  "lab_id": "week06_slam_localization",
+  "mission_signatures": {
+    "mission_1": "9a701bdc6b0d8325",
+    "mission_2": "b2b610509ffc19ce"
+  },
+  "response_signature": "287cc8353e3894e9",
+  "schema_version": 2,
+  "student": {
+    "email": "mahbub.ali86@login.cuny.edu",
+    "name": "Mahbub Ali"
+  }
+}

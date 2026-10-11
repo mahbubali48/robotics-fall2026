@@ -1,0 +1,9 @@
+# Final synthesis
+
+During Lab 6, I explored how SLAM combines robot motion estimates with LiDAR measurements to construct an occupancy grid map. Odometry provides an estimate of the robot's movement, but accumulated errors can affect its estimated position over time. LiDAR measures distances to surrounding objects, allowing SLAM to identify walls, obstacles, and free space. By combining these observations, SLAM updates the robot's estimated pose and progressively builds a map that distinguishes occupied, free, and unknown areas.
+
+In Mission 1, I used a limited exploration strategy and recorded 30 minutes, while Mission 2 used a corridor first strategy and recorded 10 minutes. Both runs produced saved occupancy grid maps, although controlling the TurtleBot3 was challenging. The robot behaved unpredictably near walls and tight spaces and eventually tipped over during Mission 2. These difficulties limited the amount of space I could explore and highlighted how robot movement, sensor visibility, and exploration strategy affect mapping results. The input delay and slow simulation performance also made precise navigation difficult.
+
+The experiment demonstrated that producing a useful map requires more than simply moving the robot. Reliable motion, sufficient LiDAR coverage, and revisiting recognizable areas can help improve map consistency. Unknown regions can remain when walls or furniture obstruct the LiDAR's line of sight or when the robot cannot reach certain locations. Revisiting previously mapped areas may help SLAM correct accumulated positioning errors, although I could not clearly verify loop closure during my exploration.
+
+Overall, this lab helped me understand how motion estimation, sensor observations, and exploration strategies work together. I learned that faster mapping does not necessarily produce a better map, especially when navigation difficulties prevent sufficient environmental coverage.
