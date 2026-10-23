@@ -1,0 +1,9 @@
+The three missions taught me that reliable robot behavior depends on both accurate visual detection and how the robot responds to that information.
+
+In Mission 1, I compared classical HSV based detection with learned models for locating a mug. My classical detector achieved 75% bounding box precision and recall across 31 images. Although it detected cup presence in every case correctly, some bounding boxes included parts of the wooden desk. The learned detector also struggled under certain conditions, especially dim lighting. This showed me that detecting something in an image does not guarantee locating the correct object.
+
+In Mission 2, I used live camera feedback to center colored pillars. My four color attempt (20261023T042253-ce0c0e86) successfully completed red, green, turquoise, and blue in 19.41 simulation seconds. The robot used HSV masks and contour centroids to calculate horizontal error and adjust its turning direction. This demonstrated how camera measurements can guide robot movement through repeated corrections.
+
+In Mission 3, I compared two line following controllers on the curved track. With GAIN = 0.08, the robot completed the route with a mean absolute image error of 0.4867. After increasing the gain to 0.30, the error decreased to 0.1739, and completion time decreased from 187.38 to 137.53 simulation seconds. This suggests that stronger steering corrections helped the robot follow the bends more accurately.
+
+Overall, these experiments showed that perception and control must work together. Changing a color threshold or steering gain can significantly affect the outcome. However, limitations remain because color based vision can confuse similar objects, camera alignment does not measure distance, and performance in a small simulation does not guarantee safety around people. A real robot would need additional sensing, obstacle detection, and extensive testing under different environmental conditions.

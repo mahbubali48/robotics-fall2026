@@ -1,0 +1,9 @@
+I enjoyed this lab because it was very interactive and gave me the opportunity to see how computer vision and robotics work together in practice. Instead of just reading about image processing and control systems, I could adjust parameters, run experiments, and immediately observe how those changes affected the robot's behavior. Watching the robot locate colored pillars and follow a line made the concepts more interesting and easier to understand.
+
+This activity positively affected my motivation to explore more work involving robotics, programming, and computer vision. I especially liked seeing how small changes, such as adjusting the steering gain, could make a noticeable difference in the robot's performance.
+
+One important takeaway was the role of safety, reliability, and human centered design. A robot might successfully detect an object or complete a route in simulation, but that does not necessarily mean it would operate safely around people. This showed me why engineers need to consider real world conditions, unexpected situations, and human safety alongside technical performance.
+
+One frustrating part of the experience was how the lab occasionally derailed because of technical issues with Docker, ROS, Gazebo, and the virtual desktop. I spent a significant amount of time troubleshooting the environment instead of focusing on the actual activities. However, working through those problems also taught me the importance of patience, troubleshooting, and understanding the tools I'm using.
+
+Overall, despite the technical difficulties, I found the lab engaging and rewarding. It made me more interested in continuing to learn about robotics and building systems that are both functional and reliable.
