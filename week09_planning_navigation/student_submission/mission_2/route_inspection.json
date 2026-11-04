@@ -1,0 +1,14 @@
+{
+  "run_id": "constrained_prm_0_baseline_f537d36d99",
+  "map": "constrained",
+  "planner": "prm",
+  "sample": 276,
+  "point": {
+    "t": 30.0,
+    "x": -0.8754823371874929,
+    "y": 2.958563507974265,
+    "speed_mps": 0.16958793524353144
+  },
+  "tracking_error_m": 0.07633631462683006,
+  "feature": "Turn"
+}
