@@ -1,0 +1,14 @@
+{
+  "job_id": "c032aeebd1cd4b169d26503d95d4489e",
+  "kind": "vision",
+  "case": "custom",
+  "prompt": "My task is to identify the tool lying in the foreground of the workbench photograph. Examine its visible shape and components carefully, including its two long metal legs, pointed ends, and adjustable hinge. Based on these features, identify the tool and explain what visual evidence supports your answer. Do not guess based on the general workbench setting, and state any uncertainty if the object cannot be identified confidently.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-08T22:48:33.474027+00:00",
+  "comparison_ids": [
+    "848f62febe884eb98ee8f86980137b50",
+    "a6f05460c9be496a8b36a956ac71d9bc",
+    "4204667ba15942b1bae35cb7e49bf139"
+  ]
+}

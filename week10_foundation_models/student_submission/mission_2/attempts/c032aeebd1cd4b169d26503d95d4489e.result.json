@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "record": {
+    "job_id": "c032aeebd1cd4b169d26503d95d4489e",
+    "kind": "vision",
+    "case": "custom",
+    "prompt": "My task is to identify the tool lying in the foreground of the workbench photograph. Examine its visible shape and components carefully, including its two long metal legs, pointed ends, and adjustable hinge. Based on these features, identify the tool and explain what visual evidence supports your answer. Do not guess based on the general workbench setting, and state any uncertainty if the object cannot be identified confidently.",
+    "phase": "custom",
+    "parent_id": null,
+    "requested_at": "2026-11-08T22:48:33.474027+00:00",
+    "comparison_ids": [
+      "848f62febe884eb98ee8f86980137b50",
+      "a6f05460c9be496a8b36a956ac71d9bc",
+      "4204667ba15942b1bae35cb7e49bf139"
+    ],
+    "output": "The tool in the foreground of the workbench photograph is a pair of pliers. The pliers have two long metal legs, one of which is longer than the other, and a pointed end on each side. The longer metal leg is positioned at the top of the image, while the shorter one is positioned at the bottom. The pliers also have two adjustable hinges, one on each side,",
+    "model": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "model_revision": "a7da5b986cb59b408707209984f360a5f4ad7e47",
+    "system_prompt": "",
+    "model_input": "My task is to identify the tool lying in the foreground of the workbench photograph. Examine its visible shape and components carefully, including its two long metal legs, pointed ends, and adjustable hinge. Based on these features, identify the tool and explain what visual evidence supports your answer. Do not guess based on the general workbench setting, and state any uncertainty if the object cannot be identified confidently.",
+    "image_sha256": "0c0e4365ce25ec9f22daf3bd4d95883bddd9782289ec17fdb7d2b7c4e8b280ff",
+    "image_preprocessing": {
+      "longest_edge": 512,
+      "image_splitting": false
+    },
+    "generated_tokens": 80,
+    "max_new_tokens": 80,
+    "generation_seconds": 51.043,
+    "truncated": true,
+    "decoding": "greedy",
+    "device": "cpu",
+    "live_inference": true,
+    "library_versions": {
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.1"
+    },
+    "output_constraint": null,
+    "completed_at": "2026-11-08T22:49:24.683344+00:00"
+  }
+}

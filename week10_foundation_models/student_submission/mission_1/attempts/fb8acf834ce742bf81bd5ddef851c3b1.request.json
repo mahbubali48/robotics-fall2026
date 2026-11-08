@@ -1,0 +1,14 @@
+{
+  "job_id": "fb8acf834ce742bf81bd5ddef851c3b1",
+  "kind": "language",
+  "case": "custom",
+  "prompt": "Starting from the base, navigate to the shelf and inspect the cup using your camera. Report only what you can actually observe. Do not assume the cup is empty or describe anything you have not verified. Do not attempt to pick up or move the cup because you do not have an arm or gripper. After inspecting the cup, return to base and stop.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-08T22:30:02.068300+00:00",
+  "comparison_ids": [
+    "a41cea74b6a54e11a8abfe1917d2eaf7",
+    "2aa13d8f476049eab250b9cb4d1a32a0",
+    "bcf6cc547d8742f5a564bef1fa9c4e7f"
+  ]
+}

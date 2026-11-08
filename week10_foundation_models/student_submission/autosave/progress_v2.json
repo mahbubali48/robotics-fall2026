@@ -1,0 +1,70 @@
+{
+  "stage": "final_submission",
+  "responses": {
+    "m1_analysis": "My revised request  did in fact improve the response by making the instructions more specific and acknowledging the robot's physical limitations. In the original clear request, the model incorrectly assumed the robot started at the shelf and that the cup was empty. With my revised request, the model correctly proposed navigating to the shelf, inspecting the cup with its camera, and returning to base without making unsupported observations. It also recognized that the robot cannot pick up or move objects because it lacks an arm or gripper. All proposed actions fit the robot's available capabilities, although the response is only a plan and does not confirm that the inspection actually occurred.",
+    "m2_analysis": "I chose the Identify task. My revised request did not fully produce a better answer, because the model still identified the foreground tool incorrectly. In the original response, it called the object a tape measure, and in the revised response it called it pliers. However, the revised response was more detailed because it referred to visible features such as the long metal legs and hinge instead of giving only a short guess. Based on the visible evidence in the photograph, the object is a metal drawing compass in the foreground, so both model answers were inaccurate. The revised request improved the amount of explanation, but it did not improve the final identification accuracy.",
+    "m3_analysis": "I compared my improved prompt with the supplied \"Describe the detour\" prompt. Both failed to reach the goal and ended at (1,1) after 50 actions. My prompt resulted in 6 successful moves, 21 blocked moves, and 23 STOP steps, compared to 6 moves, 22 blocked moves, and 22 STOP steps for the original. Although my prompt provided explicit waypoints and instructions to avoid stopping, the robot wasted nearly half its actions stopping and repeatedly attempted to move upward at the map boundary. It failed to switch to moving right after reaching (1,1). This shows that more detailed prompting did not improve navigation because the model still struggled to track its position and follow sequential instructions.",
+    "final_synthesis": "Throughout the three missions, I learned that generating a response with a foundation model does not guarantee accurate or reliable robot behavior. The quality of the instructions, available sensory information, and validation of actions all influence the results.\n\nIn Mission 1, the language model initially made unsupported assumptions about the robot's starting position and the cup's condition. My revised request explicitly described the task and physical limitations, resulting in a more accurate and feasible plan. However, the response only proposed actions and did not actually execute them. In Mission 2, the vision language model incorrectly identified a drawing compass as a tape measure. Even after I improved the request by describing visible features, the model called it pliers. This demonstrated that more detailed prompting can produce more explanation without improving visual accuracy. In Mission 3, none of the navigation prompts successfully reached the target. My improved prompt provided explicit waypoints, but the robot still stopped 23 times and attempted 21 blocked moves, ending at (1,1). Although the simulator prevented movement through walls, it could not make the model follow the correct route.\n\nOverall, these experiments showed that robot systems need clear instructions, reliable perception, and action validation. A remaining limitation is the model's inability to consistently use its current state to select appropriate actions, even when provided with a valid navigation plan.",
+    "final.course_reflection": "This lab positively affected my interest in robotics and working with foundation models. I especially enjoyed the prompt engineering aspect and the trial and error process of testing different instructions to see how the models responded. The experiments were interesting because even small changes in a prompt could affect the results, although more detailed instructions did not always lead to better performance.\n\nOne thing that stood out to me was how important it is to verify the accuracy of these models rather than blindly trusting their outputs. The vision model incorrectly identified objects, and the navigation model struggled to follow instructions even when given a clear path. This showed me why extensive testing and validation are necessary, especially when these models are used in real-world robotic systems where mistakes could affect safety.\n\nOverall, I really enjoyed this lab. It was quick, impactful, straightforward, and fun. I also appreciated that everything was handled through the Streamlit guide without needing ROS, which made the experience smoother and less demanding on my laptop. This made me more motivated to explore similar experiments and prompt engineering in the future."
+  },
+  "student": {
+    "name": "Mahbub Ali",
+    "email": "mahbub.ali86@login.cuny.edu"
+  },
+  "tutorial_step": 5,
+  "tutorial_reviewed": 6,
+  "controls": {
+    "control_ground_instruction": "Point to the blue cup",
+    "control_adapt_scenario": "The request does not identify the intended cup",
+    "control_adapt_choice": "Zero-shot prompting",
+    "control_adapt_instruction": "Move the blue cup to the tray",
+    "control_movement_token": 99,
+    "control_chunk_size": 4,
+    "control_movement_angle": 90,
+    "control_chunk_hz": 10,
+    "control_validate_age_navigate": 20.9,
+    "control_validate_case": "Navigate to the shelf",
+    "control_validate_conf_navigate": 0.9,
+    "control_live_language_runs": [
+      "a41cea74b6a54e11a8abfe1917d2eaf7",
+      "2aa13d8f476049eab250b9cb4d1a32a0",
+      "bcf6cc547d8742f5a564bef1fa9c4e7f",
+      "fb8acf834ce742bf81bd5ddef851c3b1"
+    ],
+    "control_live_language_active": "fb8acf834ce742bf81bd5ddef851c3b1",
+    "control_live_language_custom_prompt": "Starting from the base, navigate to the shelf and inspect the cup using your camera. Report only what you can actually observe. Do not assume the cup is empty or describe anything you have not verified. Do not attempt to pick up or move the cup because you do not have an arm or gripper. After inspecting the cup, return to base and stop.",
+    "control_live_vision_runs": [
+      "848f62febe884eb98ee8f86980137b50",
+      "a6f05460c9be496a8b36a956ac71d9bc",
+      "4204667ba15942b1bae35cb7e49bf139",
+      "c032aeebd1cd4b169d26503d95d4489e"
+    ],
+    "control_live_vision_active": "c032aeebd1cd4b169d26503d95d4489e",
+    "control_live_vision_custom_prompt": "My task is to identify the tool lying in the foreground of the workbench photograph. Examine its visible shape and components carefully, including its two long metal legs, pointed ends, and adjustable hinge. Based on these features, identify the tool and explain what visual evidence supports your answer. Do not guess based on the general workbench setting, and state any uncertainty if the object cannot be identified confidently.",
+    "control_robot_active": "acd04157da794b6e9c101c8d995ab2b6",
+    "control_robot_runs": [
+      "a48ecc2ee2774f5bb46a0e198691d204",
+      "855ec06b8c8b44359e1e09e592b46a66",
+      "22cb93c5e2774f569569b2597f6f0d60",
+      "84b259a4e8a340b68b45b09cf6ed8b9f",
+      "acd04157da794b6e9c101c8d995ab2b6"
+    ],
+    "control_robot_custom_prompt": "Your goal is to guide the robot from (1,7) to the blue target crate at (11,1) without hitting walls. Coordinates are written as (column,row). Choose only one action at a time: UP, DOWN, LEFT, RIGHT, or STOP.\n\nFollow these waypoints in order:\n1. Move UP from (1,7) until you reach (1,1).\n2. Move RIGHT along row 1 until you reach (7,1).\n3. Move DOWN along column 7 until you reach (7,7).\n4. Move RIGHT along row 7 until you reach (11,7).\n5. Move UP along column 11 until you reach the goal at (11,1).\n\nBefore each action, check the robot's current coordinates and determine which waypoint comes next. When a waypoint is reached, immediately switch to the next direction instead of repeating the previous movement. Do not attempt to move into walls or outside the map. Avoid moving back and forth between the same cells. Use STOP only when the robot reaches (11,1). Return exactly one valid action word per step."
+  },
+  "guided_version": 4,
+  "guided_seen": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "response_widgets": [
+    "m1_analysis",
+    "m2_analysis",
+    "m3_analysis",
+    "final_synthesis"
+  ],
+  "version": 2
+}

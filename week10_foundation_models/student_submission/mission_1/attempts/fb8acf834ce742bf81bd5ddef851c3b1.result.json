@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "record": {
+    "job_id": "fb8acf834ce742bf81bd5ddef851c3b1",
+    "kind": "language",
+    "case": "custom",
+    "prompt": "Starting from the base, navigate to the shelf and inspect the cup using your camera. Report only what you can actually observe. Do not assume the cup is empty or describe anything you have not verified. Do not attempt to pick up or move the cup because you do not have an arm or gripper. After inspecting the cup, return to base and stop.",
+    "phase": "custom",
+    "parent_id": null,
+    "requested_at": "2026-11-08T22:30:02.068300+00:00",
+    "comparison_ids": [
+      "a41cea74b6a54e11a8abfe1917d2eaf7",
+      "2aa13d8f476049eab250b9cb4d1a32a0",
+      "bcf6cc547d8742f5a564bef1fa9c4e7f"
+    ],
+    "output": "I will navigate to the shelf and inspect the cup using my camera. I will report only what I can observe, as I do not have an arm or gripper to interact with the cup. I will not attempt to pick up or move the cup because I do not have an arm or gripper. I will return to base and stop after inspecting the cup.",
+    "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "model_revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+    "system_prompt": "You are helping a mobile robot. It starts at base. It can navigate to base, shelf or desk, inspect a known object, report observations, or stop. There is a cup on the shelf and a book on the desk. The robot has a camera and wheels but no arm or gripper. It cannot pick up or carry objects. Suggest a short plan using only these capabilities. If information is missing, ask a specific clarification question. If the task is impossible for this robot, explain why. Use at most four short sentences.",
+    "model_input": "Starting from the base, navigate to the shelf and inspect the cup using your camera. Report only what you can actually observe. Do not assume the cup is empty or describe anything you have not verified. Do not attempt to pick up or move the cup because you do not have an arm or gripper. After inspecting the cup, return to base and stop.",
+    "image_sha256": null,
+    "image_preprocessing": null,
+    "generated_tokens": 74,
+    "max_new_tokens": 96,
+    "generation_seconds": 41.653,
+    "truncated": false,
+    "decoding": "greedy",
+    "device": "cpu",
+    "live_inference": true,
+    "library_versions": {
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.1"
+    },
+    "output_constraint": null,
+    "completed_at": "2026-11-08T22:30:43.810237+00:00"
+  }
+}

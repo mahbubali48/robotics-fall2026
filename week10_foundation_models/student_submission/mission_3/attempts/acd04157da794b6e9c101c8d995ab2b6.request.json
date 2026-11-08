@@ -1,0 +1,29 @@
+{
+  "job_id": "acd04157da794b6e9c101c8d995ab2b6",
+  "kind": "language",
+  "case": "custom",
+  "prompt": "Your goal is to guide the robot from (1,7) to the blue target crate at (11,1) without hitting walls. Coordinates are written as (column,row). Choose only one action at a time: UP, DOWN, LEFT, RIGHT, or STOP.\n\nFollow these waypoints in order:\n1. Move UP from (1,7) until you reach (1,1).\n2. Move RIGHT along row 1 until you reach (7,1).\n3. Move DOWN along column 7 until you reach (7,7).\n4. Move RIGHT along row 7 until you reach (11,7).\n5. Move UP along column 11 until you reach the goal at (11,1).\n\nBefore each action, check the robot's current coordinates and determine which waypoint comes next. When a waypoint is reached, immediately switch to the next direction instead of repeating the previous movement. Do not attempt to move into walls or outside the map. Avoid moving back and forth between the same cells. Use STOP only when the robot reaches (11,1). Return exactly one valid action word per step.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-08T23:11:58.216319+00:00",
+  "comparison_ids": [
+    "84b259a4e8a340b68b45b09cf6ed8b9f",
+    "855ec06b8c8b44359e1e09e592b46a66",
+    "22cb93c5e2774f569569b2597f6f0d60"
+  ],
+  "task": "robot",
+  "robot_state": {
+    "position": [
+      1,
+      7
+    ],
+    "step": 0,
+    "history": [],
+    "finished": false,
+    "goal_reached": false,
+    "first_goal_step": null,
+    "last_feedback": "No previous action.",
+    "last_decision": null
+  },
+  "simulator_contract": "8da30a943bd97ee39237aa05e8e6800fecdecbef3ce692d7d4e48f851679060f"
+}
